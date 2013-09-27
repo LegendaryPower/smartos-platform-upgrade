@@ -1,13 +1,13 @@
 #!/bin/bash
 
-host=https://us-east.manta.joyent.com
-latest_path=$(curl -sk "$host/Joyent_Dev/public/SmartOS/latest")
+host=http://builds.smartos.skylime.net
+latest_path=$(curl -sk "$host/latest")
 version="${latest_path##*/}"
 platform_file="platform-$version.tgz"
 platform_dir="platform-$version"
 platform_url="$host$latest_path/$platform_file"
 md5sums_url="$host$latest_path/md5sums.txt"
-       
+
 tmp=$(mktemp -d)
 cd "$tmp" || exit -1
 
@@ -15,10 +15,10 @@ echo -n "Checking current boot device..."
 if [[ -z $1 ]] ; then
         usb=$(rmformat | grep Logical | awk '{print $4}' | sed 's/rdsk/dsk/;s/p0$/p1/')
         echo -n " detected $usb"
-else   
+else
         usb="$1"
         echo -n " using $usb"
-fi     
+fi
 
 umount "$usb" 2>/dev/null
 mkdir usb
@@ -34,8 +34,8 @@ if [[ ! -d usb/platform ]] ; then
         exit -1
 else
         echo ", OK"
-fi     
-       
+fi
+
 echo -n "Downloading latest platform ($platform_file)..."
 if ! curl -sk -o "$platform_file" "$platform_url" ; then
         echo " failed"
