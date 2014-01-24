@@ -15,6 +15,11 @@ echo -n "Checking current boot device..."
 if [[ -z $1 ]] ; then
         usb=$(rmformat | grep Logical | awk '{print $4}' | sed 's/rdsk/dsk/;s/p0$/p1/')
         echo -n " detected $usb"
+        usb_count=(${usb})
+        if [ ${#usb_count[@]} -gt 1 ]; then
+                  echo " Warning: more than one removable device detected."
+                  exit -1
+        fi
 else
         usb="$1"
         echo -n " using $usb"
@@ -43,7 +48,7 @@ if ! curl -sk -o "$platform_file" "$platform_url" ; then
 else
         echo " OK"
 fi
-       
+
 echo -n "Verifying checksum..."
 curl -sk "$md5sums_url" \
         | grep "$platform_file" \
