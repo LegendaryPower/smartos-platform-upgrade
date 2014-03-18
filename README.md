@@ -1,7 +1,7 @@
 smartos-platform-upgrade
 ========================
 
-A script to simplify upgrades of USB booted SmartOS installations. It using the
+A script to simplify upgrades of USB booted SmartOS installations. It's using the
 SkyLime mirror with the [arekinath smartos-live](https://github.com/arekinath/smartos-live) image.
 
 Installation
