@@ -1,14 +1,15 @@
 smartos-platform-upgrade
 ========================
 
-A script to simplify upgrades of USB booted SmartOS installations.
+A script to simplify upgrades of USB booted SmartOS installations. It using the
+SkyLime mirror with the [arekinath smartos-live](https://github.com/arekinath/smartos-live) image.
 
 Installation
 ------------
 
 ```
-[root@acro ~]# curl -k https://raw.github.com/drscream/smartos-platform-upgrade/master/platform-upgrade > /opt/local/bin/platform-upgrade
-[root@acro ~]# chmod 755 /opt/local/bin/platform-upgrade
+[root@acro ~]# curl -Ok https://raw.github.com/drscream/smartos-platform-upgrade/master/platform-upgrade
+[root@acro ~]# chmod 755 platform-upgrade
 ```
 
 Optionally edit the script to select the desired mirror/download site at the top.
