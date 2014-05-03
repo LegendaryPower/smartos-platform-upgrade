@@ -8,7 +8,7 @@ Installation
 ------------
 
 ```
-[root@acro ~]# curl -Ok https://raw.github.com/drscream/smartos-platform-upgrade/master/platform-upgrade
+[root@acro ~]# curl -OkL https://raw.githubusercontent.com/drscream/smartos-platform-upgrade/master/platform-upgrade
 [root@acro ~]# chmod 755 platform-upgrade
 ```
 
