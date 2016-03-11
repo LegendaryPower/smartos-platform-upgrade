@@ -1,6 +1,6 @@
 #!/bin/bash
 
-host=http://builds.smartos.skylime.net
+host=https://builds.smartos.skylime.net
 latest_path=$(curl -sk "$host/latest")
 version="${latest_path##*/}"
 platform_file="platform-$version.tgz"
