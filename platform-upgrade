@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # https://github.com/calmh/smartos-platform-upgrade
 # Copyright (c) 2012-2016 Jakob Borg & Contributors
 # Distributed under the MIT License
