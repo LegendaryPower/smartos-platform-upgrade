@@ -41,7 +41,9 @@ jVaMaA==
 EOF
 
 function _curl {
-        curl -s --cacert "$cert_file" $@
+        params="-s --cacert $cert_file $@"
+        $force && params="$params -k"
+        curl $params
 }
 
 host=https://us-east.manta.joyent.com
